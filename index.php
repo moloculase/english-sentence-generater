@@ -10,142 +10,17 @@ email: adhiyyuahmed@gmail.com
         exit();
     }
     $lines = 20;
-
-    function rand_word() {
-        $word = null;
-        $lenght = rand(5,12);
-        $s = 0;
-        while ($s < $lenght) {
-            $letter_rand_123 = rand(1,30);
-            switch ($letter_rand_123) {
-                case '1':
-                    $word = $word."a";
-                    break;
-                case '2':
-                    $word = $word."b";
-                    break;
-                case '3':
-                    $word = $word."c";
-                    break;
-                case '4':
-                    $word = $word."d";
-                    break;
-                case '5':
-                    $word = $word."e";
-                    break;
-                case '6':
-                    $word = $word."f";
-                    break;
-                case '7':
-                    $word = $word."g";
-                    break;
-                case '8':
-                    $word = $word."h";
-                    break;
-                case '9':
-                    $word = $word."i";
-                    break;
-                case '10':
-                    $word = $word."j";
-                    break;
-                case '11':
-                    $word = $word."k";
-                    break;
-                case '12':
-                    $word = $word."l";
-                    break;
-                case '13':
-                    $word = $word."m";
-                    break;
-                case '14':
-                    $word = $word."n";
-                    break;
-                case '15':
-                    $word = $word."o";
-                    break;
-                case '16':
-                    $word = $word."p";
-                    break;
-                case '17':
-                    $word = $word."q";
-                    break;
-                case '18':
-                    $word = $word."r";
-                    break;
-                case '19':
-                    $word = $word."s";
-                    break;
-                case '20':
-                    $word = $word."t";
-                    break;
-                case '21':
-                    $word = $word."u";
-                    break;
-                case '22':
-                    $word = $word."v";
-                    break;
-                case '23':
-                    $word = $word."w";
-                    break;
-                case '24':
-                    $word = $word."x";
-                    break;
-                case '25':
-                    $word = $word."y";
-                    break;
-                case '26':
-                    $word = $word."z";
-                    break;
-                case '27':
-                    $word = $word."a";
-                    break;
-                case '28':
-                    $word = $word."a";
-                    break;
-                case '29':
-                    $word = $word."a";
-                    break;
-                case '30':
-                    $word = $word."a";
-                    break;
-            }
-            $s = $s + 1;
-        }
-        return $word;      
-    } 
     function sen() {
         include("list.php");
-        $rand_back = array_rand($items,1);
-        $rand_quote = array_rand($quote,1);
-        $conjuctions = array(
-            'and',
-            'while',
-            'so',
-            'if',
-            'but',
-            'or',
-            'yet',
-            'nor',
-            'after',
-            'for',
-            'as',
-            'as though',
-            'to which',
-            'Now that',
-            'Even if',
-            'As soon as',
-            'Provided that',
-            'Until',
-            'Wherever',
-            'Provided that',
-            'so that',
-            'i willed'
-        );
         $rand_con = array_rand($conjuctions,1);
+        $rand1 = array_rand($nouns_start,1);
+        $rand2 = array_rand($verbs,1);
+        $rand3 = array_rand($adject,1);
+        $rand4 = array_rand($nouns,1);
         if (rand(1,2) == 1) {
-            return $conjuctions[$rand_con]." ".$quote[$rand_quote]." ".$items[$rand_back].". ";
+            return $conjuctions[$rand_con]." ".$nouns_start[$rand1]." ".$verbs[$rand2]." a ".$adject[$rand3]." ".$nouns[$rand4];
         } else {
-            return $quote[$rand_quote]." ".$items[$rand_back].". ";
+            return $nouns_start[$rand1]." ".$verbs[$rand2]." a ".$adject[$rand3]." ".$nouns[$rand4];
         }     
     }
   
