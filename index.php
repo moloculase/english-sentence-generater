@@ -32721,30 +32721,11 @@ email: adhiyyuahmed@gmail.com
         'so that',
         'i willed',
     );
-    function sentenceGenerate($lines=20){
-        function sen() {
-            include("list.php");
-            $rand_con = array_rand($conjuctions,1);
-            $rand1 = array_rand($nouns_start,1);
-            $rand2 = array_rand($verbs,1);
-            $rand3 = array_rand($adject,1);
-            $rand4 = array_rand($nouns,1);
-            if (rand(1,2) == 1) {
-                return $conjuctions[$rand_con]." ".$nouns_start[$rand1]." ".$verbs[$rand2]." a ".$adject[$rand3]." ".$nouns[$rand4];
-            } else {
-                return $nouns_start[$rand1]." ".$verbs[$rand2]." a ".$adject[$rand3]." ".$nouns[$rand4];
-            }     
-        } 
-        $q = 0;
-        $poem = null;
-        while ($q < $lines) {
-            $poem = $poem.sen()."<br>";     
-            $q = $q + 1;
-        }  
-        $heading = explode("<br>", $poem);
-        $heading_get = $heading[rand(1,$lines - 15)];
-        echo "<h1>".$heading_get."</h1>";
-        echo "<h4>a poem made by mandarin bot</h4><br>";
-        echo $poem."<br>";
-        echo "<title>".$heading_get." | by: MandarinBot</title>";
+    function sentenceGenerate(){
+        $rand_con = array_rand($conjuctions,1);
+        $rand1 = array_rand($nouns_start,1);
+        $rand2 = array_rand($verbs,1);
+        $rand3 = array_rand($adject,1);
+        $rand4 = array_rand($nouns,1);
+        return $nouns_start[$rand1]." ".$verbs[$rand2]." a ".$adject[$rand3]." ".$nouns[$rand4];    
     }
